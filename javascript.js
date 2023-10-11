@@ -1,133 +1,126 @@
-import { todayDeal } from "./todayDeal.js"
+document.addEventListener('DOMContentLoaded',loadProduct);
 
-let slideBtnLeft = document.getElementById("slide-btn-left")
-let slideBtnRight = document.getElementById("slide-btn-right")
-let imgItem = document.querySelectorAll(".image-item")
-
-
-console.log(imgItem.length - 1)
-
-let startSlider = 0
-let endSlider = (imgItem.length - 1) * 100  // 700
-
-slideBtnLeft.addEventListener("click", handleLeftBtn)
-
-function handleLeftBtn() {
-    if (startSlider < 0) {
-        startSlider = startSlider + 100;
-    }
-    imgItem.forEach(element => {
-        element.style.transform = `translateX(${startSlider}%)`;
-    })
+function loadProduct(){
+    loadContent();
 }
 
-slideBtnRight.addEventListener("click", handleRightBtn)
+function loadContent(){
+    //remove items from cart
+    let btnRemove = document.querySelectorAll('.cart-remove');
+    btnRemove.forEach((btn)=>{
+        btn.addEventListener('click',removeItem);
+    });
 
-function handleRightBtn() {
-    if (startSlider >= -endSlider + 100) {
-        startSlider = startSlider - 100;
-    }
-    imgItem.forEach(element => {
-        element.style.transform = `translateX(${startSlider}%)`;
-    })
+    //product Item Change Event
+    let qtyProduct = document.querySelectorAll('.cart-quantity');
+    qtyProduct.forEach((input)=>{
+        input.addEventListener('change',changeQty);
+    });
 
+    //product Cart
+    let btnAddCart = document.querySelectorAll('.add-cart');
+    // console.log(btnAddCart);
+    btnAddCart.forEach((btn)=>{
+        btn.addEventListener('click',addCart);
+    });
+
+    updateTotal();
 }
-//render automatic
-function renderSlideAuto() {
 
-    if (startSlider >= -endSlider + 100) {
-        handleRightBtn()
+//remove Item
+function removeItem(){
+    // console.log("Click");
+    if(confirm("Are You Sure to Remove")){
+        let title=this.parentElement.querySelector('.cart-title').innerHTML;
+        itemList=itemList.filter(el=>el.title!=title);
+        this.parentElement.remove();
     }
-    else {
-        startSlider = 0;
-    }
+    loadContent();
+    
 }
-setInterval(renderSlideAuto, 2000);
+
+//change Quantity
+function changeQty(){
+    if(isNaN(this.value)||this.value<1){
+        this.value = 1;
+    }
+    loadContent();
+}
+let itemList=[];
+
+//Add Cart
+function addCart(){
+    // console.log('Check');
+    let product = this.parentElement;
+    let title=product.querySelector('.card-title').innerHTML;
+    let price=product.querySelector('.Item-price').innerHTML;
+    // console.log(price);
+    let imgSrc=product.querySelector('.card-img-top').src;
+    // console.log(imgSrc);
+
+    let newProduct={title,price,imgSrc};
+
+    //Check Product already exsists
+    if(itemList.find((el)=>el.title==newProduct.title)){
+        alert("Product Already Added in Cart");
+        return;
+    }else{
+        itemList.push(newProduct);
+    }
+
+    let newProductElement = createCartProduct(title,price,imgSrc);
+
+    let cartProduct=document.createElement('div');
+    cartProduct.innerHTML=newProductElement;
+    let cartBasket=document.querySelector('.cart-content');
+    cartBasket.append(cartProduct);
+
+    loadContent();
+}
 
 
 
-
-/***** sidebar navigation  */
-const sidebarNavigationEl = document.getElementById("sidebar-container-navigation-id")
-const sidebarOpenNavigationEl = document.getElementById("open-nav-sidebar")
-const sidebarCloseNavigationEl = document.getElementById("sidebar-navigation-close")
-
-
-//  console.log(sidebarNavigationEl)
-
-sidebarOpenNavigationEl.addEventListener("click", () => {
-    sidebarNavigationEl.classList.toggle("slidebar-show")
-})
-sidebarCloseNavigationEl.addEventListener("click", () => {
-    sidebarNavigationEl.classList.toggle("slidebar-show")
-})
-
-
-
-
-//today deals 
-console.log(todayDeal)
-let todayDealProductListEl = document.querySelector(".today_deals_product_list")
-console.log(todayDealProductListEl)
-
-let todayDealProductHTML = ""
-
-let todayDeallength = todayDeal.length
-
-for (let i = 0; i < todayDeallength; i++) {
-    // console.log(todayDeal[i])
-
-    todayDealProductHTML += `
-        <div class="today_deals_product_item">
-                <div class="todayDeals_product_image">
-                    <img src=${todayDeal[i].img} />
+function createCartProduct(title,price,imgSrc){
+    return `
+                <div class="cart-box">
+                    <img src="${imgSrc}" class="img-thumbnail rounded-circle " alt="">
+                    <div class="detail-box">
+    
+                            <div class="cart-title">${title}</div>
+                        
+                        <div class="price-box">
+                            <div class="cart-price">${price}</div>
+                            <div class="cart-amt">${price}</div>
+                            
+                        </div>
+                        <input type="number" value="1" class="cart-quantity w-25 ">
+                    </div>
+                    <a name="trash" class="cart-remove"><i class="fa-solid fa-trash"></i><a></a>
                 </div>
-            
+    `;
 
-
-            <div class="discount_Contaienr">
-                <a href="#">Up to ${todayDeal[i].discount}% off</a>
-                <a href="#">${todayDeal[i].DealOfDay}</a>
-            </div>
-            <p>${todayDeal[i].desc}</p>
-        </div>
-    `
 }
 
-todayDealProductListEl.innerHTML = todayDealProductHTML
-//  console.log(todayDealProductHTML)
+function updateTotal()
+{
+    const cartItems=document.querySelectorAll('.cart-box');
+    const totalValue=document.querySelector('.total-price');
 
-let today_deal_btn_prevEl = document.getElementById("today_deal_btn_prev")
-let today_deal_btn_nextEl = document.getElementById("today_deal_btn_next")
-let today_deals_product_itemEl = document.querySelectorAll(".today_deals_product_item")
+    let total=0;
 
-let startProduct = 0;
+    cartItems.forEach(product=>{
+        let productPrice=product.querySelector('.cart-price');
+        let price=parseInt(productPrice.innerHTML.replace("₹",""));
+        let qty=product.querySelector('.cart-quantity').value;
+        total+=(price*qty);
+        product.querySelector('.cart-amt').innerText="(x"+qty+")"+" ₹ "+price*qty;
 
+    });
+    totalValue.innerHTML=`₹ ${total}`;
 
-today_deal_btn_prevEl.addEventListener("click", () => {
+    //Cart Count
+    const cartCount=document.querySelector('.badge');
+    let count=itemList.length;
+    cartCount.innerHTML=count;
 
-   
-    if(startProduct < 0){
-        startProduct += 500
-    }
-    if(startProduct > -2000){
-        today_deals_product_itemEl.forEach(el =>{
-            el.style.transform = `translateX(${startProduct}%)`
-        })
-    }
-
-})
-
-today_deal_btn_nextEl.addEventListener("click", () => {
-    // alert("next")
-    
-    if(startProduct > -1500){
-        startProduct -= 500
-    }
-
-    today_deals_product_itemEl.forEach(el =>{
-        el.style.transform = `translateX(${startProduct}%)`
-    })
-    
-    
-})
+}
