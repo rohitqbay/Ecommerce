@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', loadProduct);
+document.addEventListener('DOMContentLoaded', function () {
+    loadProduct();
+});
 
 function loadProduct() {
     loadContent();
@@ -7,17 +9,17 @@ function loadProduct() {
 function loadContent() {
     // Attach event listeners for buttons
     let btnRemove = document.querySelectorAll('.cart-remove');
-    btnRemove.forEach((btn) => {
+    btnRemove.forEach(function (btn) {
         btn.addEventListener('click', removeItem);
     });
 
     let qtyProduct = document.querySelectorAll('.cart-quantity');
-    qtyProduct.forEach((input) => {
+    qtyProduct.forEach(function (input) {
         input.addEventListener('change', changeQty);
     });
 
     let btnAddCart = document.querySelectorAll('.add-cart');
-    btnAddCart.forEach((btn) => {
+    btnAddCart.forEach(function (btn) {
         btn.addEventListener('click', addCart);
     });
 
@@ -27,7 +29,9 @@ function loadContent() {
 function removeItem() {
     if (confirm("Are you sure you want to remove this item?")) {
         let title = this.parentElement.querySelector('.cart-title').innerHTML;
-        itemList = itemList.filter((el) => el.title !== title);
+        itemList = itemList.filter(function (el) {
+            return el.title !== title;
+        });
         this.parentElement.remove();
     }
     loadContent();
@@ -43,14 +47,16 @@ function changeQty() {
 let itemList = [];
 
 function addCart() {
-    let product = this.parentElement;
+    let product = this.parentElement.parentElement;
     let title = product.querySelector('.card-title').innerHTML;
     let price = product.querySelector('.Item-price').innerHTML;
-    let imgSrc = product.parentElement.querySelector('img').src;
+    let imgSrc = product.querySelector('img').src;
 
     let newProduct = { title, price, imgSrc };
 
-    if (itemList.find((el) => el.title === newProduct.title)) {
+    if (itemList.find(function (el) {
+        return el.title === newProduct.title;
+    })) {
         alert("Product is already in the cart.");
         return;
     } else {
@@ -62,7 +68,7 @@ function addCart() {
     let cartProduct = document.createElement('div');
     cartProduct.innerHTML = newProductElement;
     let cartBasket = document.querySelector('.cart-content');
-    cartBasket.append(cartProduct);
+    cartBasket.appendChild(cartProduct);
 
     loadContent();
 }
@@ -91,7 +97,7 @@ function updateTotal() {
     const totalValue = document.querySelector('.total-price');
     let total = 0;
 
-    cartItems.forEach((product) => {
+    cartItems.forEach(function (product) {
         let productPrice = product.querySelector('.cart-price');
         let price = parseFloat(productPrice.innerText.replace('₹', ''));
         let qty = parseInt(product.querySelector('.cart-quantity').value);
