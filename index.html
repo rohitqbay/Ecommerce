@@ -1,498 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" />
-    <title>Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in</title>
-
-    <!--css file-->
-    <link rel="stylesheet" href="style.css" />
-
-    <!--font awesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <title>E-commerece</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
 </head>
-
 <body>
-    <header class="header">
-        <div class="container container-header">
-            <div class="logo-container border-white">
-                <div class="logo"></div>
-                <span class="dotin">.in</span>
-            </div>
-
-            <div class="address-container border-white">
-                <p class="hello">Hello</p>
-                <div class="icon-address">
-                    <i class="fa-solid fa-location-dot icon-location"></i>
-                    <p>Select your address</p>
-                </div>
-            </div>
-
-            <div class="search-container">
-                <select class="search-select">
-                    <option>All</option>
-                </select>
-                <input type="text" class="search-input" />
-                <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-
-            </div>
-
-            <div class="language-container border-white">
-                <p>English</p>
-                <div class="lauguge-image">
-                    <img
-                        src="https://media.istockphoto.com/vectors/vector-flag-of-the-republic-of-india-proportion-23-the-national-flag-vector-id1051236720?k=20&m=1051236720&s=612x612&w=0&h=ATObRTHmTosADa9zaB2dQPn_VAQmG1XYH2x92kzc304=" />
-                </div>
-            </div>
-
-            <div class="login-container border-white">
-                <p>Hello,<span>sign in</span></p>
-                <p class="account">Account & Lists</p>
-            </div>
-
-            <div class="return-order-container">
-                <p>Returns
-                <div class="order">& Orders</div>
-                </p>
-            </div>
-
-            <div class="cart-container border-white">
-                <i class="fa-solid fa-cart-shopping"></i>
-                Cart
-            </div>
-        </div>
-    </header>
-
-    <!--navigation-->
-    <nav class="nav">
-        <div class="container container-nav">
-            <ul>
-                <li class="border-white" id="open-nav-sidebar">
-                    <span class="open-nav-slider">
-                        <i class="fa-solid fa-bars"></i>
-                        All
-                    </span>
+    <nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><i class="fa-brands fa-shopify fa-bounce fa-xl" style="color: #df2099;"></i> &nbsp;GoShop</a>
+          <button class="navbar-toggler btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            
+              <ul class="navbar-nav mb-lg-0 ">
+                <li class="nav-item mx-auto">
+                  <a class="nav-link me-3 " href="#home">Home</a>
                 </li>
-                <li class="border-white"><a href="#">Best Sellers</a></li>
-                <li class="border-white"><a href="#">Today's Deals</a></li>
-                <li class="border-white"><a href="#">Mobiles</a></li>
-                <li class="border-white"><a href="#">Customer Service</a></li>
-                <li class="border-white"><a href="#">Electronic</a></li>
-                <li class="border-white"><a href="#">Home & Kitchen</a></li>
-                <li class="border-white"><a href="#">Fashion</a></li>
-                <li class="border-white"><a href="#">Book</a></li>
-                <li class="border-white prime-image-hover">
-                    <a href="#">Prime</a>
-                    <div class="prime-image">
-                        <img
-                            src="https://m.media-amazon.com/images/G/31/prime/NavFlyout/TryPrime/2018/Apr/IN-Prime-PIN-TryPrime-MultiBen-Apr18-400x400._CB442254244_.jpg" />
+                <li class="nav-item mx-auto count-box">
+                  <a class="nav-link" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                  Cart &nbsp;<span class="badge bg-danger rounded-5"></span></a>
+                </li>
+              </ul>
+          
+          </div>
+        </div>
+      </nav>
+<!-- Our Products -->
+      <section id="home">
+        <div class="container-fluid">
+            <h1 class="text-center text-uppercase" style="color: orangered;">Our Products</h1>
+            <div class="row pt-3" id="product">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/brown-leather-slip-men-s-shoes-fashion.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Brown leather mens shoes</h5>
+                          <p class="card-text Item-price">₹999</p>
+                          <p class="card-text"> Size : 7 8 9 10</p>
+                        </div>
+                          <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                          <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
                     </div>
-
-                </li>
-            </ul>
-            <div class="nav-right-image-amazon-prime">
-                <img
-                    src="https://m.media-amazon.com/images/G/31/img17/Home/AmazonTV/Ravina/Desktop/Watch-Entertainment-for-FREE_400-x39._CB605460886_.jpg" />
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/closeup-leather-high-heeled-female-brown-shoes-decorated-with-metal-parts.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Brown leather women shoes</h5>
+                          <p class="card-text Item-price">₹899</p>
+                          <p class="card-text"> Size : 7 8 9 10</p>
+                        </div>
+                          <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                          <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/happy-woman-white-crop-top-outdoor-photoshoot.jpg" class="card-img-top" alt="T-shirt">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">White T-shirt women</h5>
+                          <p class="card-text Item-price">₹399</p>
+                          <p class="card-text"> Size : S M L XL</p>
+                        </div>
+                          <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                          <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/light-shines-elegant-shoes-with-precious-stones.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Premium High Heels</h5>
+                          <p class="card-text Item-price">₹1999</p>
+                          <p class="card-text"> Size : 7 8 9 10</p>
+                        </div>
+                          <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                          <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/sole-pair-brown-wood-boots.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Leather Boot Mens</h5>
+                          <p class="card-text Item-price">₹899</p>
+                          <p class="card-text"> Size : 7 8 9 10</p>
+                        </div>
+                          <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                          <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/woman-gray-crop-top-fashion-shoot.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Gray Crop Top</h5>
+                          <p class="card-text Item-price">₹450</p>
+                          <p class="card-text"> Size : S M L XL</p>
+                        </div>
+                        <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                        <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/women-s-beige-low-heel-shoes-fashion.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Beige low Heel</h5>
+                          <p class="card-text Item-price">₹799</p>
+                          <p class="card-text"> Size : 7 8 9 10</p>
+                        </div>
+                        <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                        <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card mb-3">
+                        <img src="./images/pair-trainers.jpg" class="card-img-top" alt="leather shoes">
+                        <div class="card-body">
+                          <h5 class="card-title text-center">Running Shoe</h5>
+                          <p class="card-text Item-price">₹2999</p>
+                          <p class="card-text"> Size : 7 8 9 10</p>
+                        </div>
+                        <a  class="btn btn-warning w-50 mx-auto mb-2">Buy Now</a>
+                        <a  class="add-cart btn btn-primary w-50 mx-auto mb-2">Add to Cart</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </nav>
-
-    <!--sidebar navigation-->
-    <div class="sidebar-container-navigation" id="sidebar-container-navigation-id">
-        <div class="sidebar-left-part">
-            <div class="sidebar-top">
-                <i class="fa-solid fa-circle-user"></i>
-                <h2>Hello, <span>sign in</span></h2>
+      </section>
+      <footer>
+        <div class="footer">
+        </div>
+      </footer>
+      <div class="offcanvas offcanvas-end" id="demo">
+        <div class="offcanvas-header bg-dark">
+          <h1 class="offcanvas-title mx-auto text-light">Cart Items</h1>
+          <button type="button" class="btn-close bg-light" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="cart-content" >
             </div>
-            <div class="sidebar-wrap">
-                <div class="sidebar-item">
-                    <h2>Trending</h2>
-                    <p>Best Sellers</p>
-                    <p>New Releases</p>
-                    <p>Movers and Shakers</p>
-                </div>
-                <div class="sidebar-item">
-                    <h2>Digital Content And Devices</h2>
-                    <p>Echo & Alexa</p>
-                    <p>Fire TV</p>
-                    <p>Kindle E-Readers & eBooks</p>
-                    <p>Audible Audiobooks</p>
-                    <p>Amazon Prime Video</p>
-                    <p>Amazon Prime Music</p>
-                </div>
-                <div class="sidebar-item">
-                    <h2>Shop By Category</h2>
-                    <p>Mobiles, Computes</p>
-                    <p>TV, Appliances, Electronic</p>
-                    <p>Men's Fashion</p>
-                    <p>Women's Fashion</p>
-                    <p>See All</p>
-                </div>
-                <div class="sidebar-item">
-                    <h2>Programs & Features</h2>
-                    <p>Gift Cards & Mobile Recharges</p>
-                    <p>Flight Tickets</p>
-                    <p>#Foundlt-OnAmazon</p>
-                    <p>Clearance store</p>
-                </div>
-                <div class="sidebar-item">
-                    <h2>Help & Settings</h2>
-                    <p>Your Account</p>
-                    <p>Customer Service</p>
-                    <p>Sign in</p>
-                </div>
+            <div class="total mt-3 pt-2 bg-info" style="border-radius: 10px;">
+                <div class="total-title h3">Total Price: </div>
+                <div class="total-price h4">Rs.0</div>
+            </div>
+            <div class="place-btn d-flex justify-content-center mt-2">
+                <button class="place btn " style="background-color: orangered; color: #fff;">PLACE ORDER</button>
             </div>
         </div>
-        <button id="sidebar-navigation-close">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
+      </div>
     </div>
-
-
-
-
-    <!--image slider -->
-    <section>
-        <div class="image-container">
-            <div class="image-list">
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/71cp9PVuTfL._SX3000_.jpg" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/61GnAucagBL._SX3000_.png" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/71qlKqpJnlL._SX3000_.jpg" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/71cQMXCLSvL._SX3000_.jpg" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/61aURrton0L._SX3000_.jpg" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/61O72XhcEkL._SX3000_.jpg" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/61VuJdpjvaL._SX3000_.jpg" />
-                </div>
-                <div class="image-item">
-                    <img src="https://m.media-amazon.com/images/I/61UrRx+3LLL._SX3000_.jpg" />
-                </div>
-            </div>
-
-            <div class="image-btn-container">
-
-                <button class="slider-btn" id="slide-btn-left"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="slider-btn" id="slide-btn-right"><i class="fa-solid fa-chevron-right"></i></i></button>
-            </div>
-        </div>
-    </section>
-
-
-    <!--product container card-->
-    <main class="main">
-        <div class="card-product-container container">
-            <div class="card-product">
-                <h2>Up to 60% off | Styles for Men</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-1-186-116._SY116_CB636110853_.jpg" />
-                        <p>clothing</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-3-186-116._SY116_CB636110853_.jpg" />
-                        <p>Footwear</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Watches</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Gateway/BAU/BTF-Refresh/May/PF_MF/MF-4-186-116._SY116_CB636110853_.jpg" />
-                        <p>Bags & language</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-            <div class="card-product">
-                <h2>Redefine your living room</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Furniture/furniture_node_1/372_232_03_low._SY116_CB605507312_.jpg" />
-                        <p>Sofa cum beds</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Furniture/furniture_node_1/372_232_04_low._SY116_CB605507312_.jpg" />
-                        <p>Office chairs & study</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Furniture/furniture_node_1/372_232_01_low._SY116_CB605507312_.jpg" />
-                        <p>Bean bags</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Furniture/furniture_node_1/372_232_02_low._SY116_CB605507312_.jpg" />
-                        <p>Explore all</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">Visit our furniture store</button>
-            </div>
-            <div class="card-product">
-                <h2>Top rated, premium quality | Amazon Brands &</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_1._SY116_CB606110532_.jpg" />
-                        <p>Home Products</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_5._SY116_CB606110532_.jpg" />
-                        <p>Furniture</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Daily essentials</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_8._SY116_CB606110532_.jpg" />
-                        <p>Fashion</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-            <div class="card-product">
-                <h2>Top rated, premium quality | Amazon Brands &</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_1._SY116_CB606110532_.jpg" />
-                        <p>Home Products</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_5._SY116_CB606110532_.jpg" />
-                        <p>Furniture</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Daily essentials</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_8._SY116_CB606110532_.jpg" />
-                        <p>Fashion</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-        </div>
-
-        <div class="card-product-container container productBackgraound">
-            <div class="card-product">
-                <h2>Top rated, premium quality | Amazon Brands &</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_1._SY116_CB606110532_.jpg" />
-                        <p>Home Products</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_5._SY116_CB606110532_.jpg" />
-                        <p>Furniture</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Daily essentials</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_8._SY116_CB606110532_.jpg" />
-                        <p>Fashion</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-            <div class="card-product">
-                <h2>Top rated, premium quality | Amazon Brands &</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_1._SY116_CB606110532_.jpg" />
-                        <p>Home Products</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_5._SY116_CB606110532_.jpg" />
-                        <p>Furniture</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Daily essentials</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_8._SY116_CB606110532_.jpg" />
-                        <p>Fashion</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-            <div class="card-product">
-                <h2>Top rated, premium quality | Amazon Brands &</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_1._SY116_CB606110532_.jpg" />
-                        <p>Home Products</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_5._SY116_CB606110532_.jpg" />
-                        <p>Furniture</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Daily essentials</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_8._SY116_CB606110532_.jpg" />
-                        <p>Fashion</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-            <div class="card-product">
-                <h2>Top rated, premium quality | Amazon Brands &</h2>
-                <div class="card-product-nested-card">
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_1._SY116_CB606110532_.jpg" />
-                        <p>Home Products</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_5._SY116_CB606110532_.jpg" />
-                        <p>Furniture</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_3._SY116_CB606110532_.jpg" />
-                        <p>Daily essentials</p>
-                    </div>
-                    <div class="card-nested">
-                        <img
-                            src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/BAU/Oct/186X116_8._SY116_CB606110532_.jpg" />
-                        <p>Fashion</p>
-                    </div>
-                </div>
-                <button class="card-product-btn">see more</button>
-            </div>
-        </div>
-
-    
-    <!--today's deals -->
-    <section class="today_deals_container">
-        <div class="today_deals_heading">
-            <h1>Today's Deals</h1>
-            <p><a href="#">See all deals</a></p>
-        </div>
-
-        <div class="today_deals_product_container">
-            <div class="today_deals_btn_container">
-                <button  class="today_deal_btn" id="today_deal_btn_prev">
-                    <i class="fa-solid fa-angle-left"></i>
-                </button>
-                <button class="today_deal_btn" id="today_deal_btn_next">
-                    <i class="fa-solid fa-angle-right"></i>
-                </button>
-            </div>
-
-            <div class="today_deals_product_list">
-                <div class="today_deals_product_item">
-                    <img src="https://m.media-amazon.com/images/I/411mbYGYIdL._AC_SY200_.jpg"/>
-                    <div class="discount_Contaienr">
-                        <a href="#">Up to 52% off</a>
-                        <a href="#">Deal of the day</a>
-                    </div>
-                    <p>adidas and Campus Footwear</p>
-                </div>
-
-                <div class="today_deals_product_item">
-                    <img src="https://m.media-amazon.com/images/I/411mbYGYIdL._AC_SY200_.jpg"/>
-                    <div class="discount_Contaienr">
-                        <a href="#">Up to 52% off</a>
-                        <a href="#">Deal of the day</a>
-                    </div>
-                    <p>adidas and Campus Footwear</p>
-                </div>
-
-                <div class="today_deals_product_item">
-                    <img src="https://m.media-amazon.com/images/I/411mbYGYIdL._AC_SY200_.jpg"/>
-                    <div class="discount_Contaienr">
-                        <a href="#">Up to 52% off</a>
-                        <a href="#">Deal of the day</a>
-                    </div>
-                    <p>adidas and Campus Footwear</p>
-                </div>
-
-                <div class="today_deals_product_item">
-                    <img src="https://m.media-amazon.com/images/I/411mbYGYIdL._AC_SY200_.jpg"/>
-                    <div class="discount_Contaienr">
-                        <a href="#">Up to 52% off</a>
-                        <a href="#">Deal of the day</a>
-                    </div>
-                    <p>adidas and Campus Footwear</p>
-                </div>
-
-                <div class="today_deals_product_item">
-                    <img src="https://m.media-amazon.com/images/I/411mbYGYIdL._AC_SY200_.jpg"/>
-                    <div class="discount_Contaienr">
-                        <a href="#">Up to 52% off</a>
-                        <a href="#">Deal of the day</a>
-                    </div>
-                    <p>adidas and Campus Footwear</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </main>
-
-
-    
-
-
-
-
-
-
-
-    <script src="javascript.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d9f12dd912.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
